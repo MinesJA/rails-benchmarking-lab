@@ -10,6 +10,8 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.integer :budget
       t.integer :revenue
       t.string :status
+      t.integer :vote_count
+      t.float :vote_average
 
       t.timestamps
     end

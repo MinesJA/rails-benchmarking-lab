@@ -8,13 +8,14 @@ class Movie < ApplicationRecord
   has_many :keyword_movies
   has_many :keywords, through: :keyword_movies
 
+  validates :title, uniqueness: true
 
   def self.seed_movies
     CSV.foreach("db/the-movies-dataset/tmdb_5000_movies.csv") do |row|
       # ["budget", "genres", "homepage", "id", "keywords", "original_language", "original_title", "overview", "popularity", "production_companies", "production_countries", "release_date", "revenue", "runtime", "spoken_languages", "status", "tagline", "title", "vote_average", "vote_count"]
       budget, genres, homepage, id, keywords, original_language, original_title, overview, popularity, production_companies, production_countries, release_date, revenue, runtime, spoken_languages, status, tagline, title, vote_average, vote_count = row
 
-      @movie = Movie.create(
+      @movie = Movie.new(
         title: original_title,
         overview: overview,
         tagline: tagline,
@@ -27,17 +28,13 @@ class Movie < ApplicationRecord
         vote_average: vote_average.to_f,
         status: status
       )
-      puts "Created #{@movie.title}"
 
-      if(keywords[0] == "[" && keywords[-1] == "]")
-        keywords_array = eval(keywords)
+      @movie.id = id
+      if @movie.save
+        puts "Created #{@movie.title}"
+        Keyword.process(keywords, movie)
 
-        keywords_array.each do |kw_obj|
-          @keyword = Keyword.find_or_create_by(name: kw_obj[:name])
-          @movie.keywords << @keyword
-          puts "Created/found #{@keyword.name}"
-        end
-      end
+      
 
     end
   end
