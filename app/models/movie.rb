@@ -30,13 +30,18 @@ class Movie < ApplicationRecord
       )
 
       @movie.id = id
+
       if @movie.save
         puts "Created #{@movie.title}"
         Keyword.process(keywords, movie)
-
-      
+      else
+        @movie = Movie.find(id)
+        puts "Found #{@movie.title}"
+        Keyword.process(keywords, movie)
+      end
 
     end
+
   end
 
 

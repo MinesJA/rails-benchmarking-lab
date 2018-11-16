@@ -1,9 +1,9 @@
 class Keyword < ApplicationRecord
   has_many :keyword_movies
   has_many :movies, through: :keyword_movies
+  validates :name, uniqueness: true
 
-
-  def self.process
+  def self.seed_keywords(keywords, movie)
     if(keywords[0] == "[" && keywords[-1] == "]")
       keywords_array = eval(keywords)
 
@@ -12,6 +12,8 @@ class Keyword < ApplicationRecord
         movie.keywords << @keyword
         puts "Created/found #{@keyword.name}"
       end
+    else
+      puts "That is not a valid array of keywords"
     end
   end
 

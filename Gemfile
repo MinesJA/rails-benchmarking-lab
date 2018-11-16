@@ -37,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'materialize-sass', '~> 1.0.0'
-gem 'percent_of', '~> 0.0.3'
 
 group :production do
   gem 'pg'
