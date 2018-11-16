@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_230035) do
+ActiveRecord::Schema.define(version: 2018_11_16_154525) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
-    t.string "gender"
+    t.integer "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "keyword_movies", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "keyword_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "keywords", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,15 +52,8 @@ ActiveRecord::Schema.define(version: 2018_11_12_230035) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.float "rating"
-    t.integer "user_id"
-    t.integer "movie_id"
-    t.integer "timestamp"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "vote_count"
+    t.float "vote_average"
   end
 
 end

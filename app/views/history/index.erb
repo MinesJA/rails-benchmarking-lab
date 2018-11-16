@@ -1,0 +1,28 @@
+<div style="margin: 20px;">
+  <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Query Request</th>
+        <th>Student Name</th>
+        <th>Baseline Speed (ms)</th>
+        <th>Best Time (ms)</th>
+        <th>% Faster than Baseline</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @queries.each do |query| %>
+        <tr>
+          <td><%= query[:id] %></td>
+          <td><%= query[:request] %></td>
+          <td><%= query[:student_name] %></td>
+          <td><%= query[:baseline] %></td>
+          <td><%= query[:best] %></td>
+          <td><%= query[:rating] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

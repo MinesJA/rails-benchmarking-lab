@@ -18,6 +18,7 @@
 !/tmp/.keep
 
 /the-movies-dataset
+.csv
 
 # Ignore uploaded files in development
 /storage/*

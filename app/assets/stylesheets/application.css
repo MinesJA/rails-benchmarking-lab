@@ -1,15 +1,65 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* @import "materialize"; */
+
+
+strong {
+  font-size: 25px;
+}
+
+h4 {
+  margin-top: 2px;
+}
+
+span {
+  background-color: #323232;
+  color: white;
+  padding: 5px;
+  font-family: Courier New;
+}
+
+.deliverable {
+  font-family: Sans-serif;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.passed {
+  color: #33cc33;
+  border: 3px solid green;
+  background-color: rgba(124,252,0, 0.2)
+}
+
+.failed {
+  color: #ff3300;
+  border: 3px solid red;
+  background-color: rgba(255,0,0, 0.2)
+}
+
+.benchmark {
+  background-color: rgba(0,0,128, 0.2);
+  color: black;
+  padding: 3px 10px;
+  margin: 10px 5px;
+}
+
+.request {
+
+}
+
+.graph {
+  border: 2px solid;
+  height: 20px;
+  margin: 20px 10px;
+}
+
+@keyframes inner {
+  from {width: 0px;}
+  to {width: 100px;}
+}
+
+.inner {
+  background-color: green;
+  height: 100%;
+  animation-name: inner;
+  animation-duration: 1s;
+  width: 100px;
+}
