@@ -1,6 +1,4 @@
 /* @import "materialize"; */
-
-
 strong {
   font-size: 25px;
 }
@@ -20,6 +18,7 @@ span {
   font-family: Sans-serif;
   font-size: 20px;
   padding-left: 20px;
+  margin: 50px;
 }
 
 .passed {

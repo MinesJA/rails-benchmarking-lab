@@ -1,34 +1,12 @@
-<div class="deliverable passed">
-  <p><strong>[TEST PASSED]</strong> Return all movies with the name of blank in this order</p>
-  <hr>
-  <div class="benchmark">
-    <h4>Baseline Query:</h4>
-    <span>
-    Movie.all.find {|movie| movie.name == "name"}
-    </span>
-    <h5>Number of Records per Second (on avg)</h5>
-    <div class="graph">
-      <div class="inner"></div>
-    </div>
-    <small>Fetched 2,000 records in an average of 0.0035 ms</small>
-    <hr>
-    <h4>Your query:</h4>
-    <span> Movie.where(name: "bob").order_by(popularity)</span>
-    <h5>Number of Records per Second (on avg)</h5>
-    <div class="graph">
-      <div class="inner"></div>
-    </div>
-    <small>Fetched 2,000 records in an average of 0.0035 ms</small>
-  </div>
-</div>
 
-<div class="deliverable failed">
-  <p><strong>[TEST FAILED]</strong> Return all movies with the name of blank in this order</p>
-  <hr>
-  <div class="benchmark">
-    <h4>Expected:</h4>
-    <span> @movies.count == 5 && @movies.first.name == "Goodfellas" && @movies.last.name == "Dumbo Drop"</span>
-    <h4>Got:</h4>
-    <span> @movies.count == 5 && @movies.first.name == "Goodfellas" && @movies.last.name == "Dumbo Drop" </span>
-  </div>
+
+
+<div class="queryList">
+  <% @tests.each do |test| %>
+    <% if test[:passed] %>
+      <%= render "query/passed", test: test %>
+    <% else %>
+      <%= render "query/failed", test: test %>
+    <% end %>
+  <% end %>
 </div>
