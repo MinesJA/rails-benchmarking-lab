@@ -1,25 +1,2 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# rails-benchmarking-lab
+1. Return the top 10 most popular actors (appeared in the most films) who have appeared in the top 5 most profitable films (revenue - cost)
