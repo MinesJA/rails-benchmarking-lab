@@ -3,6 +3,11 @@ class Actor < ApplicationRecord
   has_many :movies, through: :movie_actors
   validates :name, uniqueness: true
 
+
+  def self.profitable_actors
+    
+  end
+
   def self.ten_most_popular_slow
     # 1. Return the top 10 most prolific actors (appeared in the most films) who have appeared in the top 5 most profitable films (revenue - cost)
     # Ruby - slowest:

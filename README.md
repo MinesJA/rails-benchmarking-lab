@@ -1,10 +1,9 @@
 
-1. Return the top 100 actors based on profitability (rev - cost of all movies they appeared in averaged out). Values should only be their names, the most popular film they appeared in and the character they portrayed.
-ex. [{name: "Mark Hamill", character: "Luke Skywalker, movie: "Star Wars"}, ...etc.]
+1. Return the top 100 actors based on profitability (rev - cost of all movies they appeared in averaged out).
 
 <!-- 2. Return entire rows of the top 10 most popular actors (appeared in the most films) of the top 5 most profitable films (revenue - cost) -->
 
-3. Return the names of the top 50 unique Keywords associated with the top 10 least popular actors (popularity of actor = average popularity of total movies)
+3. Return the names of the top 50 unique Keywords associated with the top 10 least popular movies (average popularity of total movies).
 
 4. Return Tagline and Character columns, and the vote_average of the movies they appear in, grouped by Actor who's movie are Released, not in English
 
